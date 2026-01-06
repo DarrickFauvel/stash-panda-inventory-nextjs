@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
 
 export default function NavLink({
   href,
@@ -8,5 +10,17 @@ export default function NavLink({
   href: string;
   children: React.ReactNode;
 }) {
-  return <Link href={href}>{children}</Link>;
+  const pathname = usePathname();
+  if (pathname === href) {
+    return (
+      <Link className="font-bold underline" href={href}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <Link className="hover:underline" href={href}>
+      {children}
+    </Link>
+  );
 }

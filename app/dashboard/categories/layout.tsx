@@ -13,10 +13,10 @@ export default function CategoriesLayout({
         <nav>
           <ul className="flex gap-4">
             <li>
-              <NavLink href="/categories">List</NavLink>
+              <NavLink href="/dashboard/categories">List</NavLink>
             </li>
             <li>
-              <NavLink href="/categories/new">Add New</NavLink>
+              <NavLink href="/dashboard/categories/new">Add New</NavLink>
             </li>
           </ul>
         </nav>

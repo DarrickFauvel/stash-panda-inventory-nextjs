@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider signInForceRedirectUrl="/dashboard">
       <html lang="en">
         <body
           className={`root ${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -51,19 +51,7 @@ export default function RootLayout({
             </SignedIn>
           </header>
           <div className="px-4">
-            <header>
-              <nav className="flex justify-between">
-                <NavLink href='/'>Home</NavLink>
-                <ul className="flex gap-4">
-                  <li>
-                    <NavLink href="/items">Items</NavLink>
-                  </li>
-                  <li>
-                    <NavLink href="/categories">Categories</NavLink>
-                  </li>
-                </ul>
-              </nav>
-            </header>
+            
             {children}
           </div>
         </body>

@@ -2,7 +2,7 @@
 
 import Form from "next/form";
 import { createItemAction } from "@/lib/actions/item";
-import FormFieldComponent from "../../../components/form-field";
+import FormFieldComponent from "../../../../components/form-field";
 import FormSelectComponent from "./components/form-select";
 
 const inputFields = [

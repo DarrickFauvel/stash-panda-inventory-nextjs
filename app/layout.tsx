@@ -9,6 +9,7 @@ import {
 } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavLink from "@/components/nav-link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`root ${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <header className="flex justify-end items-center p-4 gap-4 h-16">
             <SignedOut>
@@ -49,7 +50,22 @@ export default function RootLayout({
               <UserButton />
             </SignedIn>
           </header>
-          {children}
+          <div className="px-4">
+            <header>
+              <nav className="flex justify-between">
+                <NavLink href='/'>Home</NavLink>
+                <ul className="flex gap-4">
+                  <li>
+                    <NavLink href="/items">Items</NavLink>
+                  </li>
+                  <li>
+                    <NavLink href="/categories">Categories</NavLink>
+                  </li>
+                </ul>
+              </nav>
+            </header>
+            {children}
+          </div>
         </body>
       </html>
     </ClerkProvider>

@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
 export async function createItemAction(formData: FormData) {
-  return prisma.item.create({
+  return await prisma.item.create({
     data: {
       name: formData.get("name") as string,
       sku: formData.get("sku") as string,
@@ -28,7 +28,7 @@ export async function getAllItemsAction() {
   }));
 }
 
-export async function deleteItem(id) {
+export async function deleteItem(id: string) {
   await prisma.item.delete({
     where: { id },
   });

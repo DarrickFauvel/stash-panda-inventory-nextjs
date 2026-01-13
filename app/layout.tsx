@@ -10,6 +10,7 @@ import {
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavLink from "@/components/nav-link";
+import FooterComponent from "./components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,10 +51,9 @@ export default function RootLayout({
               <UserButton />
             </SignedIn>
           </header>
-          <div className="px-4">
-            
-            {children}
-          </div>
+          <div className="px-4 min-h-dvh">{children}</div>
+
+          <FooterComponent />
         </body>
       </html>
     </ClerkProvider>

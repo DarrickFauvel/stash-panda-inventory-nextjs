@@ -1,10 +1,11 @@
+import heroImage from "@/public/images/hero-image.png";
+import HeroComponent from "./components/hero";
 
 export default function Home() {
   return (
     <div>
-      
       <main>
-        <h1 className="text-2xl font-bold">Welcome to Stash Panda</h1>
+        <HeroComponent />
       </main>
     </div>
   );

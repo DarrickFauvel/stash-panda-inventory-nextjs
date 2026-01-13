@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
 export async function createCategoryAction(formData: FormData) {
-  return prisma.category.create({
+  return await prisma.category.create({
     data: {
       id: formData.get("id") as string,
       name: formData.get("name") as string,
@@ -34,7 +34,7 @@ export async function getAllCategoriesAction() {
   }));
 }
 
-export async function deleteCategory(id) {
+export async function deleteCategory(id: string) {
   await prisma.category.delete({
     where: { id },
   });

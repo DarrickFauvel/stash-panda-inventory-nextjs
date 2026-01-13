@@ -17,6 +17,9 @@ export default function DashboardLayout({
             <li>
               <NavLink href="/dashboard/categories">Categories</NavLink>
             </li>
+            <li>
+              <NavLink href="/dashboard/locations">Locations</NavLink>
+            </li>
           </ul>
         </nav>
       </header>
